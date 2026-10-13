@@ -23,18 +23,14 @@ jobs:
         with:
           channel: 'stable'
 
-      - name: Re-create Android Platform Files
-        run: flutter create . --platforms=android --org com.example.app
-
       - name: Get Dependencies
         run: flutter pub get
 
-      - name: Build APK (Fat APK)
-        run: flutter build apk --split-per-abi=false --release
+      - name: Build APK
+        run: flutter build apk --release
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
           name: app-release-apk
           path: build/app/outputs/flutter-apk/app-release.apk
-          
