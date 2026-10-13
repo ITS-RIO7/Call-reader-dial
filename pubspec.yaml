@@ -1,0 +1,28 @@
+name: flutter_call_dtmf_suite
+description: "A cross-platform Flutter application for call state detection and DTMF tone decoding on Android, iOS, and Windows."
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  # Call state detection for Android & iOS
+  phone_state: ^3.0.0
+  # Cross-platform audio recording and PCM streaming (Android, iOS, Windows)
+  record: ^5.1.2
+  # Cross-platform runtime permission handling
+  permission_handler: ^11.3.1
+  # Date/time formatting for event logs
+  intl: ^0.19.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
