@@ -23,14 +23,14 @@ jobs:
         with:
           channel: 'stable'
 
-      - name: Re-create Missing Project Platforms
-        run: flutter create . --platforms=android
+      - name: Re-create Android Platform Files
+        run: flutter create . --platforms=android --org com.example.app
 
-      - name: Install dependencies
+      - name: Get Dependencies
         run: flutter pub get
 
-      - name: Build APK
-        run: flutter build apk --release
+      - name: Build APK (Fat APK)
+        run: flutter build apk --split-per-abi=false --release
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
