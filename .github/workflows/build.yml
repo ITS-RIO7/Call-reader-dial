@@ -23,6 +23,9 @@ jobs:
         with:
           channel: 'stable'
 
+      - name: Re-create Missing Project Platforms
+        run: flutter create . --platforms=android
+
       - name: Install dependencies
         run: flutter pub get
 
